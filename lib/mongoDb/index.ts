@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
 
-const MONGODB_URI = 'mongodb+srv://uv84690:<password>@cluster0.fou24cc.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const MONGODB_URI = process.env.MONGODB_URI!;
 let cached =(global as any).mongoose || { conn: null, promise : null};
 
 export const connectDb  =  async() => {
